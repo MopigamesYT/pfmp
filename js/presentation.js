@@ -675,14 +675,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Setup Socket.io connection for remote control
         setupSocketConnection: function() {
-            // For a real application, you would use your server URL
-            // This is just for local development and demonstration
-            const serverUrl = window.location.hostname + ':3000';
-            
             try {
-                // Create socket connection
-                this.socket = io(serverUrl);
-                
+                // Create socket connection to current host and protocol
+                this.socket = io({
+                    path: '/socket.io',
+                    transports: ['websocket', 'polling'],
+                    secure: window.location.protocol === 'https:' // Use wss:// for HTTPS, ws:// for HTTP
+                });
+        
                 // Socket event handlers
                 this.socket.on('connect', () => {
                     console.log('Connected to server as presentation');
