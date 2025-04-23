@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Update presentation title
                 if (presentationData && presentationData.title) {
                     this.presentationTitle.textContent = presentationData.title;
+                    document.title = 'Remote - ' + presentationData.title;
                 }
                 
                 // Generate slides list and notes from data
@@ -115,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 presentationData = await response.json();
-                document.title = 'Remote - ' + presentationData.title;
                 return presentationData;
             } catch (error) {
                 console.error('Error loading presentation data:', error);
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (slide.notes && slide.notes.length > 0) {
                     notesHTML = '<ul>' + slide.notes.map(note => `<li>${note}</li>`).join('') + '</ul>';
                 } else {
-                    notesHTML = '<p>Pas de notes pour cette diapositive.</p>';
+                    notesHTML = `<p>${slide.noNotesText || 'No notes for this slide.'}</p>`;
                 }
                 
                 noteSlide.innerHTML = `
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const errorDiv = document.createElement('div');
             errorDiv.className = 'alert alert-danger';
             errorDiv.innerHTML = `
-                <h4><i class="fas fa-exclamation-triangle"></i> Erreur</h4>
+                <h4><i class="fas fa-exclamation-triangle"></i> Error</h4>
                 <p>${message}</p>
             `;
             document.querySelector('.remote-container').appendChild(errorDiv);
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.socket.on('connect', () => {
                     console.log('Connected to server as remote');
                     this.statusIndicator.classList.add('connected');
-                    this.statusText.textContent = 'Connecté au serveur';
+                    this.statusText.textContent = presentationData.connectionText?.connected || 'Connected to server';
                     
                     // Register as remote control
                     this.socket.emit('register', { type: 'remote' });
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.socket.on('disconnect', () => {
                     console.log('Disconnected from server');
                     this.statusIndicator.classList.remove('connected');
-                    this.statusText.textContent = 'Déconnecté du serveur';
+                    this.statusText.textContent = presentationData.connectionText?.disconnected || 'Disconnected from server';
                 });
                 
                 // Receive slide changes from presentation
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 this.socket.on('presentationConnected', () => {
                     console.log('Presentation connected');
-                    this.statusText.textContent = 'Connecté à la présentation';
+                    this.statusText.textContent = presentationData.connectionText?.presentationConnected || 'Connected to presentation';
                     
                     // Request current slide info
                     this.socket.emit('getSlideInfo');
@@ -313,12 +313,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 this.socket.on('presentationDisconnected', () => {
                     console.log('Presentation disconnected');
-                    this.statusText.textContent = 'Présentation déconnectée';
+                    this.statusText.textContent = presentationData.connectionText?.presentationDisconnected || 'Presentation disconnected';
                 });
                 
             } catch (error) {
                 console.error('Failed to connect to socket server:', error);
-                this.statusText.textContent = 'Erreur de connexion au serveur';
+                this.statusText.textContent = presentationData.connectionText?.error || 'Connection error';
             }
         },
         
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.socket.emit(command, data);
             } else {
                 console.warn('Not connected to presentation');
-                this.statusText.textContent = 'Non connecté à la présentation';
+                this.statusText.textContent = presentationData.connectionText?.notConnected || 'Not connected to presentation';
                 
                 // Attempt reconnect
                 if (this.socket) {
@@ -394,21 +394,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const statusText = document.getElementById('status-text');
             
             statusIndicator.classList.remove('connected');
-            statusText.textContent = 'Serveur non disponible';
+            statusText.textContent = 'Server unavailable';
             
             // Show offline message
             const offlineMessage = document.createElement('div');
             offlineMessage.className = 'offline-message';
             offlineMessage.innerHTML = `
                 <div class="alert alert-warning" role="alert">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Serveur non disponible</h4>
-                    <p>Pour utiliser la télécommande, vous devez démarrer le serveur Socket.io sur le port 3000.</p>
+                    <h4><i class="fas fa-exclamation-triangle"></i> Server Unavailable</h4>
+                    <p>To use the remote control, you need to start the Socket.io server on port 3000.</p>
                     <p>Instructions:</p>
                     <ol>
-                        <li>Installez Node.js</li>
-                        <li>Installez Socket.io: <code>npm install socket.io</code></li>
-                        <li>Créez un fichier server.js avec le code de configuration du serveur</li>
-                        <li>Lancez le serveur: <code>node server.js</code></li>
+                        <li>Install Node.js</li>
+                        <li>Install Socket.io: <code>npm install socket.io</code></li>
+                        <li>Create a server.js file with the server configuration code</li>
+                        <li>Start the server: <code>node server.js</code></li>
                     </ol>
                 </div>
             `;

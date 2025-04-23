@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                             </div>
                             <div class="skills-section">
-                                <h3>Parcours et compétences</h3>
+                                <h3>${slide.skillsTitle || 'Skills & Background'}</h3>
                                 <ul class="skills-list">
                                     ${skillsHTML}
                                 </ul>
@@ -279,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="companies-grid">
                             <div class="company-card" id="${slide.company.name.toLowerCase().replace(/\s+/g, '-')}">
                                 <h3>${slide.company.period} - ${slide.company.name}</h3>
-                                <p><strong>Secteur:</strong> ${slide.company.sector}</p>
-                                <p><strong>Activité principale:</strong> ${slide.company.activity}</p>
+                                <p><strong>${slide.company.sectorLabel || 'Sector'}:</strong> ${slide.company.sector}</p>
+                                <p><strong>${slide.company.activityLabel || 'Main Activity'}:</strong> ${slide.company.activity}</p>
                                 <div class="tasks">
-                                    <h4>Tâches principales:</h4>
+                                    <h4>${slide.company.tasksLabel || 'Key Points'}</h4>
                                     <ul>
                                         ${tasksHTML}
                                     </ul>
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h2 class="slide-title">${slide.title}</h2>
                         <div class="case-study">
                             <div class="section-header">
-                                <h3>Problématique</h3>
+                                <h3>${slide.problemTitle || 'Issues'}</h3>
                             </div>
                             <ul class="problem-list">
                                 ${problemsHTML}
@@ -344,30 +344,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     
                     // Gallery items
-                    let galleryItemsHTML = '';
-                    let indicatorsHTML = '';
+                    let galleryHTML = '';
                     
-                    slide.gallery.forEach((item, index) => {
-                        galleryItemsHTML += `
-                            <div class="gallery-item">
-                                <img src="${item.image}" alt="${item.caption}">
-                                <div class="image-caption">${item.caption}</div>
-                            </div>
-                        `;
+                    if (slide.gallery && slide.gallery.length > 0) {
+                        let galleryItemsHTML = '';
+                        let indicatorsHTML = '';
                         
-                        indicatorsHTML += `<span class="indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></span>`;
-                    });
-                    
-                    slideContent.innerHTML = `
-                        <h2 class="slide-title">${slide.title}</h2>
-                        <div class="project-development">
-                            <h3>Architecture et choix technologiques</h3>
-                            <ul>
-                                ${architectureHTML}
-                            </ul>
+                        slide.gallery.forEach((item, index) => {
+                            galleryItemsHTML += `
+                                <div class="gallery-item">
+                                    <img src="${item.image}" alt="${item.caption}">
+                                    <div class="image-caption">${item.caption}</div>
+                                </div>
+                            `;
                             
+                            indicatorsHTML += `<span class="indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></span>`;
+                        });
+                        
+                        galleryHTML = `
                             <div class="libertix-showcase">
-                                <h3>Aperçu du logiciel Libertix</h3>
+                                <h3>${slide.galleryTitle || 'Gallery'}</h3>
                                 <div class="image-gallery">
                                     <div class="gallery-container">
                                         ${galleryItemsHTML}
@@ -381,6 +377,18 @@ document.addEventListener('DOMContentLoaded', function() {
                                     </div>
                                 </div>
                             </div>
+                        `;
+                    }
+                    
+                    slideContent.innerHTML = `
+                        <h2 class="slide-title">${slide.title}</h2>
+                        <div class="project-development">
+                            <h3>${slide.architectureTitle || 'Key Points'}</h3>
+                            <ul>
+                                ${architectureHTML}
+                            </ul>
+                            
+                            ${galleryHTML}
                         </div>
                     `;
                     break;
@@ -417,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         challengesHTML += `
                             <div class="challenge">
                                 <h4>${challenge.title}</h4>
-                                <p><strong>Solution:</strong> ${challenge.solution}</p>
+                                <p><strong>${slide.solutionLabel || 'Solution'}:</strong> ${challenge.solution}</p>
                             </div>
                         `;
                     });
@@ -425,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     slideContent.innerHTML = `
                         <h2 class="slide-title">${slide.title}</h2>
                         <div class="technical">
-                            <h3>Défis techniques et solutions</h3>
+                            <h3>${slide.challengesTitle || 'Technical Challenges'}</h3>
                             <div class="technical-challenges">
                                 ${challengesHTML}
                             </div>
@@ -447,11 +455,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     slideContent.innerHTML = `
                         <h2 class="slide-title">${slide.title}</h2>
                         <div class="conclusion">
-                            <h3>Impact et résultats</h3>
+                            <h3>${slide.impactTitle || 'Impact & Results'}</h3>
                             <ul>
                                 ${impactHTML}
                             </ul>
-                            <h3>Perspectives d'évolution</h3>
+                            <h3>${slide.perspectivesTitle || 'Future Perspectives'}</h3>
                             <ul>
                                 ${perspectivesHTML}
                             </ul>
@@ -767,7 +775,6 @@ document.addEventListener('DOMContentLoaded', function() {
     init();
     
     // Fallback for Socket.io connection when no server is available
-    // This allows the presentation to work even without the remote control
     window.addEventListener('error', function(e) {
         if (e.message === "Failed to construct 'WebSocket'" || 
             e.message.includes('socket.io') || 
