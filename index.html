@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFMP Présentation - BAC PRO TSN</title>
+    <link rel="stylesheet" href="css/presentation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <div id="loading-screen">
+            <div class="spinner"></div>
+            <p>Chargement de la présentation...</p>
+        </div>
+
+        <div class="theme-switcher">
+            <button id="theme-default" class="theme-btn active">Défaut</button>
+            <button id="theme-mocha" class="theme-btn">Catppuccin Mocha</button>
+            <button id="theme-frappe" class="theme-btn">Catppuccin Frappe</button>
+            <button id="theme-latte" class="theme-btn">Latte</button>
+        </div>
+
+        <div class="slides-container">
+            <!-- Title Slide -->
+            <section class="slide" id="slide-1">
+                <div class="slide-content">
+                    <h1 class="main-title animate__animated animate__fadeIn">Présentation des PFMP</h1>
+                    <h2 class="subtitle animate__animated animate__fadeIn animate__delay-1s">BAC PRO TSN - Lycée Méditerranée</h2>
+                    <h3 class="author animate__animated animate__fadeIn animate__delay-2s">PREGO Maël</h3>
+                </div>
+            </section>
+
+            <!-- Personal Introduction Slide -->
+            <section class="slide" id="slide-about-me">
+                <div class="slide-content">
+                    <h2 class="slide-title">À propos de moi</h2>
+                    <div class="about-me-container">
+                        <div class="profile-section">
+                            <div class="profile-image">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="profile-details">
+                                <h3>PREGO Maël</h3>
+                                <p>Terminale BAC Professionnel Systèmes Numériques</p>
+                                <p>Lycée de la Méditerranée, La Ciotat</p>
+                            </div>
+                        </div>
+                        <div class="skills-section">
+                            <h3>Parcours et compétences</h3>
+                            <ul class="skills-list">
+                                <li><i class="fas fa-code"></i> Programmation autodidacte depuis la 6ème (C, Python)</li>
+                                <li><i class="fas fa-project-diagram"></i> Développement de projets concrets</li>
+                                <li><i class="fas fa-tv"></i> Affichage dynamique en NodeJS pour le centre social Les Lierres</li>
+                                <li><i class="fab fa-github"></i> Collaboration sur BetterX, projet open-source</li>
+                                <li><i class="fas fa-users"></i> Capacité à travailler en équipe et en autonomie</li>
+                                <li><i class="fas fa-laptop-code"></i> Passion pour l'innovation technologique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Companies Introduction -->
+            <section class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h2 class="slide-title">Présentation des entreprises</h2>
+                    <div class="companies-grid">
+                        <div class="company-card" id="neotys">
+                            <h3>PFMP3 - NEOTYS</h3>
+                            <p><strong>Secteur:</strong> Édition de logiciels système et de réseau</p>
+                            <p><strong>Activité principale:</strong> Édition de logiciels de test de performance et de charge pour applications</p>
+                            <div class="tasks">
+                                <h4>Tâches principales:</h4>
+                                <ul>
+                                    <li>Installation de Windows 10 Entreprise</li>
+                                    <li>Installation de disques durs SAS dans serveur</li>
+                                    <li>Contribution au logiciel Neoload-CLI</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MOBIL REPAIR -->
+            <section class="slide" id="slide-3">
+                <div class="slide-content">
+                    <h2 class="slide-title">Présentation des entreprises</h2>
+                    <div class="companies-grid">
+                        <div class="company-card" id="mobil-repair">
+                            <h3>PFMP4 - MOBIL REPAIR</h3>
+                            <p><strong>Secteur:</strong> Réparation d'équipements de communication</p>
+                            <p><strong>Activité principale:</strong> Réparation de smartphones, tablettes et ordinateurs</p>
+                            <div class="tasks">
+                                <h4>Tâches principales:</h4>
+                                <ul>
+                                    <li>Transfert de données entre smartphones</li>
+                                    <li>Installation de Windows sur PC</li>
+                                    <li>Remplacement de batteries d'iPhone XR</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EKIMIA -->
+            <section class="slide" id="slide-4">
+                <div class="slide-content">
+                    <h2 class="slide-title">Présentation des entreprises</h2>
+                    <div class="companies-grid">
+                        <div class="company-card" id="ekimia">
+                            <h3>PFMP5-6 - EKIMIA</h3>
+                            <p><strong>Secteur:</strong> Conseil en systèmes et logiciels informatiques</p>
+                            <p><strong>Activité principale:</strong> Conseil et prestation de services informatiques</p>
+                            <div class="tasks">
+                                <h4>Tâches principales:</h4>
+                                <ul>
+                                    <li>Assemblage d'ordinateur haute performance</li>
+                                    <li>Installation de systèmes d'exploitation alternatifs (/e/OS)</li>
+                                    <li>Développement du projet Libertix</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Companies Information -->
+            <section class="slide" id="slide-5">
+                <div class="slide-content">
+                    <h2 class="slide-title">Informations sur les entreprises</h2>
+                    <div class="company-details">
+                        <div class="company-info">
+                            <h3>NEOTYS</h3>
+                            <ul>
+                                <li><strong>Forme juridique:</strong> SAS</li>
+                                <li><strong>Lieu:</strong> Marseille</li>
+                                <li><strong>Effectif:</strong> 53 salariés</li>
+                                <li><strong>Président:</strong> M. David OWENS</li>
+                            </ul>
+                        </div>
+                        <div class="company-info">
+                            <h3>MOBIL REPAIR</h3>
+                            <ul>
+                                <li><strong>Forme juridique:</strong> SAS</li>
+                                <li><strong>Lieu:</strong> Marseille</li>
+                                <li><strong>Effectif:</strong> 1-10 salariés</li>
+                                <li><strong>Président:</strong> M. Yoni COHEN</li>
+                            </ul>
+                        </div>
+                        <div class="company-info">
+                            <h3>EKIMIA</h3>
+                            <ul>
+                                <li><strong>Forme juridique:</strong> SAS</li>
+                                <li><strong>Lieu:</strong> Aubagne</li>
+                                <li><strong>Effectif:</strong> 1-2 salariés</li>
+                                <li><strong>Président:</strong> M. Michel MEMETEAU</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Study: Libertix Development -->
+            <section class="slide" id="slide-6">
+                <div class="slide-content">
+                    <h2 class="slide-title">Étude de cas : Développement de Libertix</h2>
+                    <div class="case-study">
+                        <div class="section-header">
+                            <h3>Problématique</h3>
+                        </div>
+                        <ul class="problem-list">
+                            <li>Fin du support de Windows 10 dans 10 mois</li>
+                            <li>Complexité de la transition vers Linux pour les utilisateurs</li>
+                            <li>Limitations des outils existants comme Wubi</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Development -->
+            <section class="slide" id="slide-7">
+                <div class="slide-content">
+                    <h2 class="slide-title">Déroulement du projet</h2>
+                    <div class="project-development">
+                        <h3>Architecture et choix technologiques</h3>
+                        <ul>
+                            <li>Interface: C# WPF avec .NET Framework 4.8.1</li>
+                            <li>Scripts PowerShell pour la gestion des partitions</li>
+                            <li>Système de mise à jour basé sur JSON</li>
+                        </ul>
+                        
+                        <!-- Ajout du carrousel d'images Libertix -->
+                        <div class="libertix-showcase">
+                            <h3>Aperçu du logiciel Libertix</h3>
+                            <div class="image-gallery">
+                                <div class="gallery-container">
+                                    <div class="gallery-item">
+                                        <img src="assets/lb1.png" alt="Libertix - Interface principale">
+                                        <div class="image-caption">Interface principale</div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="assets/lb2.png" alt="Libertix - Sélection de distributions">
+                                        <div class="image-caption">Sélection de distributions</div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="assets/lb3.png" alt="Libertix - Partitionnement">
+                                        <div class="image-caption">Outil de partitionnement</div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="assets/lb4.png" alt="Libertix - Configuration">
+                                        <div class="image-caption">Options de configuration</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                                    <div class="gallery-indicators">
+                                        <span class="indicator active" data-index="0"></span>
+                                        <span class="indicator" data-index="1"></span>
+                                        <span class="indicator" data-index="2"></span>
+                                        <span class="indicator" data-index="3"></span>
+                                    </div>
+                                    <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Features -->
+            <section class="slide" id="slide-8">
+                <div class="slide-content">
+                    <h2 class="slide-title">Fonctionnalités principales</h2>
+                    <div class="features">
+                        <div class="feature-card">
+                            <h3>Gestion des distributions</h3>
+                            <ul>
+                                <li>Mise à jour via JSON hébergé sur serveur web</li>
+                                <li>Support de toutes les distributions Linux</li>
+                                <li>Installation automatisée pour distributions préconfigurées</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Système de partitionnement</h3>
+                            <ul>
+                                <li>Utilisation de PowerShell et diskpart</li>
+                                <li>Interface graphique pour redimensionnement des disques</li>
+                                <li>Sécurisation du processus</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Intégration avec rEFInd</h3>
+                            <ul>
+                                <li>Installation et configuration automatique du bootloader</li>
+                                <li>Gestion des paramètres de démarrage</li>
+                                <li>Support du dual-boot Windows/Linux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Aspects -->
+            <section class="slide" id="slide-9">
+                <div class="slide-content">
+                    <h2 class="slide-title">Aspects techniques</h2>
+                    <div class="technical">
+                        <h3>Défis techniques et solutions</h3>
+                        <div class="technical-challenges">
+                            <div class="challenge">
+                                <h4>Problèmes de compatibilité avec Secure Boot</h4>
+                                <p><strong>Solution:</strong> Détection automatique et désactivation</p>
+                            </div>
+                            <div class="challenge">
+                                <h4>Bugs dans l'interface utilisateur</h4>
+                                <p><strong>Solution:</strong> Système robuste de gestion des erreurs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solution and Conclusion -->
+            <section class="slide" id="slide-10">
+                <div class="slide-content">
+                    <h2 class="slide-title">Solution et conclusion</h2>
+                    <div class="conclusion">
+                        <h3>Impact et résultats</h3>
+                        <ul>
+                            <li>Solution accessible pour tous types d'utilisateurs</li>
+                            <li>Processus d'installation simplifié de Linux</li>
+                            <li>Approche moderne et flexible de migration</li>
+                            <li>Alternative viable aux solutions existantes</li>
+                        </ul>
+                        <h3>Perspectives d'évolution</h3>
+                        <ul>
+                            <li>Intégration avec WinApps</li>
+                            <li>Extension du support des distributions</li>
+                            <li>Amélioration continue de l'interface</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thank You Slide -->
+            <section class="slide" id="slide-11">
+                <div class="slide-content thank-you">
+                    <h1 class="animate__animated animate__pulse animate__infinite">Merci de votre attention</h1>
+                    <p class="questions">Avez-vous des questions ?</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn" class="control-btn"><i class="fas fa-arrow-left"></i></button>
+            <span id="slide-number">1/11</span>
+            <button id="next-btn" class="control-btn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="connection-status">
+            <span id="status-indicator"></span>
+            <span id="status-text">Non connecté à la télécommande</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="js/presentation.js"></script>
+</body>
+</html>
