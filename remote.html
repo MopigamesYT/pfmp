@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télécommande Présentation</title>
+    <link rel="stylesheet" href="css/remote.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="remote-container">
+        <header class="remote-header">
+            <h1>Télécommande de Présentation</h1>
+            <div class="theme-switcher">
+                <button id="theme-default" class="theme-btn active">Défaut</button>
+                <button id="theme-mocha" class="theme-btn">Mocha</button>
+                <button id="theme-frappe" class="theme-btn">Frappe</button>
+                <button id="theme-latte" class="theme-btn">Latte</button>
+            </div>
+            <div class="connection-status">
+                <span id="status-indicator"></span>
+                <span id="status-text">Connexion en cours...</span>
+            </div>
+        </header>
+
+        <div class="presentation-info">
+            <h2 id="presentation-title">Chargement...</h2>
+            <div class="slide-info">
+                <span>Slide: <span id="current-slide">1</span>/<span id="total-slides">?</span></span>
+                <h3 id="current-slide-title">Chargement...</h3>
+            </div>
+        </div>
+
+        <div class="controls-container">
+            <div class="navigation-controls">
+                <button id="prev-slide" class="nav-btn">
+                    <i class="fas fa-arrow-left"></i> Précédent
+                </button>
+                <button id="next-slide" class="nav-btn">
+                    Suivant <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="slide-preview">
+                <h4>Aperçu des slides</h4>
+                <!-- Slides list will be dynamically generated from JSON data -->
+                <div class="slides-list"></div>
+            </div>
+
+            <div class="speaker-notes">
+                <h4>Notes du présentateur</h4>
+                <!-- Notes will be dynamically generated from JSON data -->
+                <div id="notes-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="js/remote.js"></script>
+</body>
+</html>

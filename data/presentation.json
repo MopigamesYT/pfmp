@@ -1,0 +1,257 @@
+{
+  "title": "PFMP Présentation - BAC PRO TSN",
+  "author": "PREGO Maël",
+  "slides": [
+    {
+      "id": 1,
+      "type": "title",
+      "title": "Présentation des PFMP",
+      "subtitle": "BAC PRO TSN - Lycée Méditerranée",
+      "author": "PREGO Maël",
+      "notes": [
+        "Présentez-vous brièvement",
+        "Expliquez l'objectif de la présentation"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "about",
+      "title": "À propos de moi",
+      "profile": {
+        "name": "PREGO Maël",
+        "position": "Terminale BAC Professionnel Systèmes Numériques",
+        "school": "Lycée de la Méditerranée, La Ciotat"
+      },
+      "skills": [
+        {"icon": "fas fa-code", "text": "Programmation autodidacte depuis la 6ème (C, Python)"},
+        {"icon": "fas fa-project-diagram", "text": "Développement de projets concrets"},
+        {"icon": "fas fa-tv", "text": "Affichage dynamique en NodeJS pour le centre social Les Lierres"},
+        {"icon": "fab fa-github", "text": "Collaboration sur BetterX, projet open-source"},
+        {"icon": "fas fa-users", "text": "Capacité à travailler en équipe et en autonomie"},
+        {"icon": "fas fa-laptop-code", "text": "Passion pour l'innovation technologique"}
+      ],
+      "notes": [
+        "Présenter brièvement votre parcours autodidacte",
+        "Mentionner votre projet au centre social Les Lierres",
+        "Parler de votre implication dans le projet BetterX",
+        "Souligner votre passion pour la programmation depuis jeune"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "company",
+      "title": "Présentation des entreprises",
+      "company": {
+        "name": "NEOTYS",
+        "period": "PFMP3",
+        "sector": "Édition de logiciels système et de réseau",
+        "activity": "Édition de logiciels de test de performance et de charge pour applications",
+        "tasks": [
+          "Installation de Windows 10 Entreprise",
+          "Installation de disques durs SAS dans serveur",
+          "Contribution au logiciel Neoload-CLI"
+        ]
+      },
+      "notes": [
+        "Entreprise spécialisée dans les outils de test de performance",
+        "Tâches techniques orientées serveur et développement"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "company",
+      "title": "Présentation des entreprises",
+      "company": {
+        "name": "MOBIL REPAIR",
+        "period": "PFMP4",
+        "sector": "Réparation d'équipements de communication",
+        "activity": "Réparation de smartphones, tablettes et ordinateurs",
+        "tasks": [
+          "Transfert de données entre smartphones",
+          "Installation de Windows sur PC",
+          "Remplacement de batteries d'iPhone XR"
+        ]
+      },
+      "notes": [
+        "TPE spécialisée dans la réparation de smartphones",
+        "Tâches techniques orientées matériel"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "company",
+      "title": "Présentation des entreprises",
+      "company": {
+        "name": "EKIMIA",
+        "period": "PFMP5-6",
+        "sector": "Conseil en systèmes et logiciels informatiques",
+        "activity": "Conseil et prestation de services informatiques",
+        "tasks": [
+          "Assemblage d'ordinateur haute performance",
+          "Installation de systèmes d'exploitation alternatifs (/e/OS)",
+          "Développement du projet Libertix"
+        ]
+      },
+      "notes": [
+        "Petite entreprise de conseil informatique",
+        "Focus sur le projet Libertix"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "companies-info",
+      "title": "Informations sur les entreprises",
+      "companies": [
+        {
+          "name": "NEOTYS",
+          "info": [
+            {"label": "Forme juridique", "value": "SAS"},
+            {"label": "Lieu", "value": "Gemenos"},
+            {"label": "Effectif", "value": "53 salariés"},
+            {"label": "Président", "value": "M. David OWENS"}
+          ]
+        },
+        {
+          "name": "MOBIL REPAIR",
+          "info": [
+            {"label": "Forme juridique", "value": "SAS"},
+            {"label": "Lieu", "value": "Marseille"},
+            {"label": "Effectif", "value": "1-4 salariés"},
+            {"label": "Président", "value": "M. Yoni COHEN"}
+          ]
+        },
+        {
+          "name": "EKIMIA",
+          "info": [
+            {"label": "Forme juridique", "value": "SAS"},
+            {"label": "Lieu", "value": "Aubagne"},
+            {"label": "Effectif", "value": "1-2 salariés"},
+            {"label": "Président", "value": "M. Michel MEMETEAU"}
+          ]
+        }
+      ],
+      "notes": [
+        "Comparer les différentes tailles d'entreprises",
+        "Souligner la variété des structures d'accueil"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "case-study",
+      "title": "Étude de cas : Développement de Libertix",
+      "problem": [
+        "Fin du support de Windows 10 en Octobre 2025",
+        "Complexité de la transition vers Linux pour les utilisateurs",
+        "Limitations des outils existants comme Wubi"
+      ],
+      "notes": [
+        "Insister sur l'enjeu de fin de support de Windows 10",
+        "Expliquer les limitations des solutions existantes"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "project",
+      "title": "Déroulement du projet",
+      "architecture": [
+        "Interface: C# WPF avec .NET Framework 4.8.1",
+        "Scripts PowerShell pour la gestion des partitions",
+        "Système de mise à jour basé sur JSON"
+      ],
+      "gallery": [
+        {"image": "assets/lb1.png", "caption": "Interface principale"},
+        {"image": "assets/lb2.png", "caption": "Sélection de distributions"},
+        {"image": "assets/lb3.png", "caption": "Outil de partitionnement"},
+        {"image": "assets/lb4.png", "caption": "Options de configuration"}
+      ],
+      "notes": [
+        "Expliquer les choix de technologies",
+        "Souligner l'importance de la simplicité pour l'utilisateur final"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "features",
+      "title": "Fonctionnalités principales",
+      "features": [
+        {
+          "name": "Gestion des distributions",
+          "items": [
+            "Mise à jour via JSON hébergé sur serveur web",
+            "Support de toutes les distributions Linux",
+            "Installation automatisée pour distributions préconfigurées"
+          ]
+        },
+        {
+          "name": "Système de partitionnement",
+          "items": [
+            "Utilisation de PowerShell et diskpart",
+            "Interface graphique pour redimensionnement des disques",
+            "Sécurisation du processus"
+          ]
+        },
+        {
+          "name": "Intégration avec rEFInd",
+          "items": [
+            "Installation et configuration automatique du bootloader",
+            "Gestion des paramètres de démarrage",
+            "Support du dual-boot Windows/Linux"
+          ]
+        }
+      ],
+      "notes": [
+        "Détailler le processus d'installation",
+        "Expliquer l'importance du partitionnement automatisé"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "technical",
+      "title": "Aspects techniques",
+      "challenges": [
+        {
+          "title": "Problèmes de compatibilité avec Secure Boot",
+          "solution": "Détection automatique et désactivation"
+        },
+        {
+          "title": "Bugs dans l'interface utilisateur",
+          "solution": "Système robuste de gestion des erreurs"
+        }
+      ],
+      "notes": [
+        "Mentionner les difficultés avec Secure Boot",
+        "Expliquer les solutions mises en place"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "conclusion",
+      "title": "Solution et conclusion",
+      "impact": [
+        "Solution accessible pour tous types d'utilisateurs",
+        "Processus d'installation simplifié de Linux",
+        "Approche moderne et flexible de migration",
+        "Alternative viable aux solutions existantes"
+      ],
+      "perspectives": [
+        "Intégration avec WinApps",
+        "Extension du support des distributions",
+        "Amélioration continue de l'interface"
+      ],
+      "notes": [
+        "Souligner l'utilité pour les utilisateurs non-techniques",
+        "Mentionner les perspectives d'évolution"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "thank-you",
+      "title": "Merci de votre attention",
+      "subtitle": "Avez-vous des questions ?",
+      "notes": [
+        "Remercier l'auditoire pour son attention",
+        "Inviter aux questions"
+      ]
+    }
+  ]
+}
