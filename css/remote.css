@@ -1,4 +1,11 @@
 /* Remote Control Styles */
+@font-face {
+    font-family: 'Jellee Roman';
+    src: url('../fonts/Jellee-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* Default theme variables (will be overridden by theme selection) */
     --primary-color: #2c3e50;
@@ -60,7 +67,7 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Jellee Roman', Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     min-height: 100vh;
