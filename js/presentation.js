@@ -274,13 +274,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         tasksHTML += `<li>${task}</li>`;
                     });
                     
+                    // Optional sector and activity fields
+                    let sectorHTML = slide.company.sector ? 
+                        `<p><strong>${slide.company.sectorLabel || 'Sector'}:</strong> ${slide.company.sector}</p>` : '';
+                    let activityHTML = slide.company.activity ? 
+                        `<p><strong>${slide.company.activityLabel || 'Main Activity'}:</strong> ${slide.company.activity}</p>` : '';
+                    
                     slideContent.innerHTML = `
                         <h2 class="slide-title">${slide.title}</h2>
                         <div class="companies-grid">
                             <div class="company-card" id="${slide.company.name.toLowerCase().replace(/\s+/g, '-')}">
                                 <h3>${slide.company.period} - ${slide.company.name}</h3>
-                                <p><strong>${slide.company.sectorLabel || 'Sector'}:</strong> ${slide.company.sector}</p>
-                                <p><strong>${slide.company.activityLabel || 'Main Activity'}:</strong> ${slide.company.activity}</p>
+                                ${sectorHTML}
+                                ${activityHTML}
                                 <div class="tasks">
                                     <h4>${slide.company.tasksLabel || 'Key Points'}</h4>
                                     <ul>
