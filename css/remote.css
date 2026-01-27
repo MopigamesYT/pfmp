@@ -312,6 +312,7 @@ body {
     background-color: var(--card-surface);
     border-radius: 8px;
     min-height: 150px;
+    color: var(--text-color);
 }
 
 .note-slide h5 {
@@ -327,6 +328,13 @@ body {
 .note-slide li {
     margin-bottom: 8px;
     font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.note-slide p,
+#notes-content p {
+    color: var(--text-color);
+    margin-bottom: 8px;
 }
 
 /* Alert styling for offline message */
@@ -340,6 +348,7 @@ body {
     border-left: 4px solid var(--accent-color);
     padding: 15px;
     border-radius: 6px;
+    color: var(--text-color);
 }
 
 .alert h4 {
@@ -351,15 +360,21 @@ body {
 }
 
 .alert code {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--card-border);
     padding: 2px 5px;
     border-radius: 3px;
     font-family: monospace;
+    color: var(--text-color);
 }
 
 .alert ol, .alert ul {
     padding-left: 20px;
     margin-top: 10px;
+    color: var(--text-color);
+}
+
+.alert li {
+    color: var(--text-color);
 }
 
 /* Scrollbar styling */
