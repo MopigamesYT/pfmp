@@ -11,6 +11,9 @@ const io = new Server(server);
 // Serve static files
 app.use(express.static(path.join(__dirname)));
 
+// Serve images from /data/images/
+app.use('/data/images', express.static(path.join(__dirname, 'data/images')));
+
 // Store client connections
 let presentationSocket = null;
 let remoteClients = new Set();
