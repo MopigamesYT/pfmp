@@ -15,6 +15,10 @@
     --background-color: #ecf0f1;
     --success-color: #2ecc71;
     --card-bg: #fff;
+    --card-surface: #f8f9fa;
+    --card-border: #dee2e6;
+    --header-text: #fff;
+    --button-text: #fff;
     --transition-time: 0.3s;
 }
 
@@ -30,6 +34,8 @@
     --card-surface: #313244; /* Surface0 */
     --card-border: #45475a; /* Surface1 */
     --highlight: #f5c2e7; /* Pink */
+    --header-text: #1e1e2e; /* Dark text for light header */
+    --button-text: #1e1e2e; /* Dark text for light buttons */
 }
 
 /* Catppuccin Frappe Theme */
@@ -44,6 +50,8 @@
     --card-surface: #414559; /* Surface0 */
     --card-border: #51576d; /* Surface1 */
     --highlight: #f4b8e4; /* Pink */
+    --header-text: #292c3c; /* Dark text for light header */
+    --button-text: #292c3c; /* Dark text for light buttons */
 }
 
 /* Catppuccin Latte Theme (light) */
@@ -58,6 +66,8 @@
     --card-surface: #ccd0da; /* Surface0 */
     --card-border: #bcc0cc; /* Surface1 */
     --highlight: #ea76cb; /* Pink */
+    --header-text: #fff; /* White text for dark header */
+    --button-text: #fff; /* White text for dark buttons */
 }
 
 * {
@@ -86,7 +96,7 @@ body {
 /* Header */
 .remote-header {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--header-text);
     padding: 20px;
     text-align: center;
     position: relative;
@@ -95,6 +105,7 @@ body {
 .remote-header h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
+    color: var(--header-text);
 }
 
 /* Theme switcher */
@@ -106,9 +117,9 @@ body {
 }
 
 .theme-btn {
-    background-color: var(--card-surface);
-    color: var(--text-color);
-    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--header-text);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     padding: 6px 10px;
     cursor: pointer;
@@ -119,11 +130,13 @@ body {
 
 .theme-btn:hover {
     transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .theme-btn.active {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border-color: transparent;
 }
 
 .connection-status {
@@ -131,6 +144,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    color: var(--header-text);
 }
 
 #status-indicator {
@@ -194,7 +208,7 @@ body {
     padding: 15px;
     border: none;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--button-text);
     font-size: 1.1rem;
     border-radius: 8px;
     cursor: pointer;
@@ -266,7 +280,7 @@ body {
     width: 28px;
     height: 28px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--header-text);
     border-radius: 50%;
     display: flex;
     align-items: center;

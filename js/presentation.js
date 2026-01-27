@@ -180,7 +180,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Initialize UI visibility manager
                 uiVisibilityManager.init();
-                
+
+                // Initialize fullscreen viewer
+                this.initFullscreenViewer();
+
                 // Initialize galleries
                 this.initImageGalleries();
             } catch (error) {
@@ -603,10 +606,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         
+        // Initialize fullscreen image viewer
+        initFullscreenViewer: function() {
+            const overlay = document.getElementById('fullscreen-overlay');
+            const fullscreenImg = document.getElementById('fullscreen-image');
+            const closeBtn = document.getElementById('fullscreen-close');
+
+            if (!overlay || !fullscreenImg) return;
+
+            // Close fullscreen when clicking overlay or close button
+            const closeFullscreen = () => {
+                overlay.classList.remove('active');
+            };
+
+            overlay.addEventListener('click', closeFullscreen);
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeFullscreen();
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    closeFullscreen();
+                }
+            });
+
+            // Store reference for use in gallery init
+            this.fullscreenOverlay = overlay;
+            this.fullscreenImg = fullscreenImg;
+        },
+
+        // Open image in fullscreen
+        openFullscreen: function(imgSrc) {
+            if (!this.fullscreenOverlay || !this.fullscreenImg) return;
+
+            this.fullscreenImg.src = imgSrc;
+            this.fullscreenOverlay.classList.add('active');
+        },
+
         // Initialize all image galleries in the presentation
         initImageGalleries: function() {
             const galleries = document.querySelectorAll('.image-gallery');
-            
+            const self = this;
+
             galleries.forEach(gallery => {
                 const prevBtn = gallery.querySelector('.gallery-btn.prev-btn');
                 const nextBtn = gallery.querySelector('.gallery-btn.next-btn');
@@ -655,7 +698,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         showImage(index);
                     });
                 });
-                
+
+                // Click on images to open fullscreen
+                galleryItems.forEach(item => {
+                    const img = item.querySelector('img');
+                    if (img) {
+                        img.addEventListener('click', () => {
+                            self.openFullscreen(img.src);
+                        });
+                    }
+                });
+
                 // Auto-advance images every 5 seconds
                 let autoAdvance = setInterval(() => {
                     let newIndex = currentIndex + 1;
